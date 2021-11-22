@@ -2,6 +2,7 @@
 @model WebAppE2.Pages.Orden.GridModel
 @{
 }
+
 <div class="container-fluid">
     <div class="card">
         <div class="card-header">
@@ -13,30 +14,30 @@
             </a>
             <div class="row">
                 <div class="col-12">
-                    <table id="GridView" class="table table-bordered table table-striped table-hover">
+                    <table id="GridView" class="table table-hover table table-bordered table table-striped">
                         <thead>
                             <tr>
-                                <th>Id</th>
+                                <th>ID</th>
                                 <th>Producto</th>
-                                <th>Cantidad Producto</th>
+                                <th>Cantidad</th>
                                 <th>Estado</th>
-                                <th>Accion</th>
+                                <th>Acción</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach (var item in Model.GridList)
                             {
-                            <tr>
-                                <td>@item.IdOrden</td>
-                                <td>@item.Id.NombreProducto</td>
-                                <td>@item.CantidadProducto</td>
-                                <td>@item.Estado</td>
-                                <td>
-                                    <a class="btn btn-primary" asp-page="Edit" asp-route-id="@item.IdOrden"><i class='bx bx-edit-alt'></i></a>
-                                    <button type="button" class="btn btn-danger" onclick="OrdenGrid.OnClickEliminar(@item.IdOrden)"><i class='bx bx-trash'></i></button>
-                                </td>
-                            </tr>
-                            }
+                                <tr>
+                                    <td>@item.IdOrden</td>
+                                    <td>@item.Id.NombreProducto</td>
+                                    <td>@item.CantidadProducto</td>
+                                    <td>@item.Estado</td>
+                                    <td>
+                                        <a class="btn btn-primary" asp-page="Edit" asp-route-id="@item.IdOrden"><i class='bx bx-edit-alt'></i></a>
+
+                                        <button type="button" class="btn btn-danger" onclick="OrdenGrid.OnClickEliminar(@item.IdOrden)"><i class='bx bx-trash'></i></button>
+                                    </td>
+                                </tr>}
                         </tbody>
                     </table>
                 </div>
