@@ -19,6 +19,7 @@ namespace WebAppE2.Pages.Producto
         }
 
         [BindProperty]
+        [FromBody]
         public ProductoEntity Entity { get; set; } = new ProductoEntity();
 
         [BindProperty(SupportsGet = true)]

@@ -75,7 +75,9 @@
 
   <ItemGroup>
     <TypeScriptCompile Include="wwwroot\App\Orden\Edit.ts" />
-    <TypeScriptCompile Include="wwwroot\App\Orden\Grid.ts" />
+    <TypeScriptCompile Include="wwwroot\App\Orden\Grid.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="wwwroot\App\Producto\Edit.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>

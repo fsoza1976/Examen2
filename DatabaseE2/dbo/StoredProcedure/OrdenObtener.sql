@@ -3,12 +3,14 @@
 AS BEGIN
 SET NOCOUNT ON
 	SELECT
+		O.IdOrden,
 		O.IdProducto,
 		O.CantidadProducto,
 		O.Estado,
+
 		P.NombreProducto
 	FROM [dbo].[Orden] O
-	INNER JOIN [dbo].[Producto] P
+	LEFT JOIN [dbo].[Producto] P
 	ON O.IdProducto = P.IdProducto
 	WHERE
 		(@IdOrden IS NULL OR IdOrden=@IdOrden)
